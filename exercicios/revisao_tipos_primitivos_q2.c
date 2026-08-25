@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int isPrime(int number)
+static int isPrime(int number)
 {
     if (number < 2)
         return 0;

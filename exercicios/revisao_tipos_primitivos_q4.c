@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Algoritmo de Euclides recursivo (MDC)
-int mdc(int a, int b)
+static int mdc(int a, int b)
 {
     // Caso base
     if (b == 0)

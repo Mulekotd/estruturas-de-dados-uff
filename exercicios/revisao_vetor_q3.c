@@ -1,30 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int getDigits(int number)
+static int getDigits(int n)
 {
     int count = 0;
 
-    while (number != 0)
+    while (n != 0)
     {
-        number /= 10;
+        n /= 10;
         count++;
     }
 
     return count;
 }
 
-int* numberToArray(int number, int size)
+static int *numberToArray(int n, int digits)
 {
-    int* array = (int*) malloc(sizeof(int) * size);
-    
-    for (int i = size - 1; i >= 0; i--)
+    if (digits <= 0)
+        return NULL;
+
+    int* aux = (int*) calloc(digits, sizeof(int));
+
+    for (int i = digits - 1; i >= 0; i--)
     {
-        array[i] = number % 10;
-        number /= 10;
+        aux[i] = n % 10;
+        n /= 10;
     }
 
-    return array;
+    return aux;
 }
 
 int main(void)
@@ -44,10 +47,6 @@ int main(void)
     int* arrayA = numberToArray(a, digitsA);
     int* arrayB = numberToArray(b, digitsB);
 
-    /*
-     * Cada posição representa um dígito. Ao final, a quantidade de cada
-     * dígito deve ser a mesma nos dois números.
-     */
     int occurrences[10] = {0};
 
     for (int i = 0; i < digitsA; i++)
@@ -61,8 +60,10 @@ int main(void)
         if (occurrences[digit] != 0)
         {
             printf("Não é permutação.\n");
+
             free(arrayA);
             free(arrayB);
+
             return 0;
         }
     }
