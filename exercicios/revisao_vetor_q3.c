@@ -44,7 +44,28 @@ int main(void)
     int* arrayA = numberToArray(a, digitsA);
     int* arrayB = numberToArray(b, digitsB);
 
-    // ...
+    /*
+     * Cada posição representa um dígito. Ao final, a quantidade de cada
+     * dígito deve ser a mesma nos dois números.
+     */
+    int occurrences[10] = {0};
+
+    for (int i = 0; i < digitsA; i++)
+    {
+        occurrences[arrayA[i]]++;
+        occurrences[arrayB[i]]--;
+    }
+
+    for (int digit = 1; digit <= 9; digit++)
+    {
+        if (occurrences[digit] != 0)
+        {
+            printf("Não é permutação.\n");
+            free(arrayA);
+            free(arrayB);
+            return 0;
+        }
+    }
 
     printf("É permutação.\n");
 
