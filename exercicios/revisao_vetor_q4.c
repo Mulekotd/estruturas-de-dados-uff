@@ -23,7 +23,7 @@ static int* numberToArray(int n, int digits)
     return aux;
 }
 
-static int isPalindrome(int* n, int digits)
+static int isPalindrome(int *n, int digits)
 {
     if (digits == 1 || digits == 0)
         return 1;

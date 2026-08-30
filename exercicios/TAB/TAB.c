@@ -5,9 +5,9 @@ TAB* TAB_inicializa(void)
   return NULL;
 }
 
-TAB* TAB_cria(int raiz, TAB* esq, TAB* dir)
+TAB* TAB_cria(int raiz, TAB *esq, TAB *dir)
 {
-  TAB* novo = (TAB*) malloc(sizeof(TAB));
+  TAB* novo = (TAB *) malloc(sizeof(TAB));
 
   novo->info = raiz;
   novo->esq = esq;
@@ -16,7 +16,7 @@ TAB* TAB_cria(int raiz, TAB* esq, TAB* dir)
   return novo;
 }
 
-TAB* TAB_busca(TAB* a, int elem)
+TAB* TAB_busca(TAB *a, int elem)
 {
   if ((!a) || (a->info == elem))
     return a;
@@ -29,7 +29,7 @@ TAB* TAB_busca(TAB* a, int elem)
   return TAB_busca(a->dir, elem);
 }
 
-void TAB_imp_pre(TAB* a)
+void TAB_imp_pre(TAB *a)
 {
   if (a)
   {
@@ -39,7 +39,7 @@ void TAB_imp_pre(TAB* a)
   }
 }
 
-void TAB_imp_pos(TAB* a)
+void TAB_imp_pos(TAB *a)
 {
   if (a)
   {
@@ -49,7 +49,7 @@ void TAB_imp_pos(TAB* a)
   }
 }
 
-void TAB_imp_sim(TAB* a)
+void TAB_imp_sim(TAB *a)
 {
   if (a)
   {
@@ -59,7 +59,7 @@ void TAB_imp_sim(TAB* a)
   }
 }
 
-void imp_aux(TAB* a, int andar)
+void imp_aux(TAB *a, int andar)
 {
   int j;
 
@@ -69,22 +69,24 @@ void imp_aux(TAB* a, int andar)
     
     for (j = 0; j <= andar; j++)
       printf("\t");
+
     printf("%d\n", a->info);
 
     imp_aux(a->esq, andar + 1);
   } else {
     for (j = 0; j <= andar; j++)
       printf("\t");
+
     printf("N\n");
   }
 }
 
-void TAB_imp_ident(TAB* a)
+void TAB_imp_ident(TAB *a)
 {
   imp_aux(a, 0);
 }
 
-void TAB_libera(TAB* a)
+void TAB_libera(TAB *a)
 {
   if (a)
   {
@@ -102,7 +104,7 @@ int maior(int x, int y)
   return y;
 }
 
-int TAB_altura(TAB* a)
+int TAB_altura(TAB *a)
 {
   if(!a)
     return -1;

@@ -5,9 +5,9 @@ TLSE* TLSE_inicializa(void)
   return NULL;
 }
 
-TLSE* TLSE_insere(TLSE* l, int elem)
+TLSE* TLSE_insere(TLSE *l, int elem)
 {
-  TLSE* novo = (TLSE*) malloc(sizeof(TLSE));
+  TLSE* novo = (TLSE *) malloc(sizeof(TLSE));
 
   novo->prox = l;
   novo->info = elem;
@@ -15,7 +15,7 @@ TLSE* TLSE_insere(TLSE* l, int elem)
   return novo;
 }
 
-void TLSE_insere_void(TLSE** l, int elem)
+void TLSE_insere_void(TLSE **l, int elem)
 {
   TLSE* novo = (TLSE*) malloc(sizeof(TLSE));
 
@@ -36,7 +36,7 @@ void TLSE_imprime(TLSE *l)
   } 
 }
 
-void TLSE_imp_rec(TLSE* l)
+void TLSE_imp_rec(TLSE *l)
 {
   if (l)
   {
@@ -45,7 +45,7 @@ void TLSE_imp_rec(TLSE* l)
   }
 }
 
-void TLSE_imp_rec_rev(TLSE* l)
+void TLSE_imp_rec_rev(TLSE *l)
 {
   if (l)
   {
@@ -54,7 +54,7 @@ void TLSE_imp_rec_rev(TLSE* l)
   }
 }
 
-void TLSE_libera(TLSE* l)
+void TLSE_libera(TLSE *l)
 {
   TLSE *p = l, *q;
 
@@ -66,7 +66,7 @@ void TLSE_libera(TLSE* l)
   } 
 }
 
-void TLSE_lib_rec(TLSE* l)
+void TLSE_lib_rec(TLSE *l)
 {
   if (l)
   {
@@ -76,7 +76,7 @@ void TLSE_lib_rec(TLSE* l)
   }
 }
 
-TLSE* TLSE_retira(TLSE* l, int elem)
+TLSE* TLSE_retira(TLSE *l, int elem)
 {
   TLSE *p = l, *ant = NULL;
 
@@ -99,7 +99,7 @@ TLSE* TLSE_retira(TLSE* l, int elem)
   return l;
 }
 
-TLSE* TLSE_retira_rec(TLSE* l, int elem)
+TLSE* TLSE_retira_rec(TLSE *l, int elem)
 {
   if (!l)
     return l;
@@ -109,12 +109,14 @@ TLSE* TLSE_retira_rec(TLSE* l, int elem)
     TLSE* p = l;
     l = l->prox;
     free(p);
-  } else l->prox = TLSE_retira_rec(l->prox, elem);
+  } else {
+    l->prox = TLSE_retira_rec(l->prox, elem);
+  }
 
   return l;
 }
 
-TLSE* TLSE_busca(TLSE* l, int elem)
+TLSE* TLSE_busca(TLSE *l, int elem)
 {
   TLSE* p = l;
 
@@ -124,7 +126,7 @@ TLSE* TLSE_busca(TLSE* l, int elem)
   return p;
 }
 
-TLSE* TLSE_busca_rec(TLSE* l, int elem)
+TLSE* TLSE_busca_rec(TLSE *l, int elem)
 {
   if ((!l) || (l->info == elem))
     return l;

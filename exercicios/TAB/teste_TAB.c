@@ -1,7 +1,7 @@
 #include <string.h>
 #include "TAB.h"
 
-TAB* menor_elem(TAB* a)
+TAB* menor_elem(TAB *a)
 {
   if (!a)
     return a;

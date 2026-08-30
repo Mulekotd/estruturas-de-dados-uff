@@ -14,7 +14,7 @@ static int getDigits(int n)
     return count;
 }
 
-static int *numberToArray(int n, int digits)
+static int* numberToArray(int n, int digits)
 {
     if (digits <= 0)
         return NULL;

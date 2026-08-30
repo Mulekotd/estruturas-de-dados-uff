@@ -2,7 +2,7 @@
 
 int main(void)
 {
-  TABB *a = TABB_inicializa();
+  TABB* a = TABB_inicializa();
 
   int n;
 
@@ -26,6 +26,7 @@ int main(void)
       break;
 
     a = TABB_retira(a, n);
+
     TABB_imp_ident(a);
   }
   

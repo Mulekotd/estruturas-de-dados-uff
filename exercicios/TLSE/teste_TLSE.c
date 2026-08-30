@@ -2,7 +2,7 @@
 
 int main(void)
 {
-  TLSE *l = TLSE_inicializa();
+  TLSE* l = TLSE_inicializa();
 
   int x;
 

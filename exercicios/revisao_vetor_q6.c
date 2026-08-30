@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int countClonedTickets(const int* tickets, int size, int ticketCount)
+int countClonedTickets(const int *tickets, int size, int ticketCount)
 {
     int* occurrences = calloc(ticketCount + 1, sizeof(int));
 

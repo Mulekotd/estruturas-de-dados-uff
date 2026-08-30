@@ -5,9 +5,9 @@ TABB* TABB_inicializa(void)
   return NULL;
 }
 
-TABB* TABB_cria(int raiz, TABB* esq, TABB* dir)
+TABB* TABB_cria(int raiz, TABB *esq, TABB *dir)
 {
-  TABB* novo = (TABB*) malloc(sizeof(TABB));
+  TABB* novo = (TABB *) malloc(sizeof(TABB));
 
   novo->info = raiz;
   novo->esq = esq;
@@ -16,7 +16,7 @@ TABB* TABB_cria(int raiz, TABB* esq, TABB* dir)
   return novo;
 }
 
-void TABB_imp_pre(TABB* a)
+void TABB_imp_pre(TABB *a)
 {
   if (a)
   {
@@ -26,7 +26,7 @@ void TABB_imp_pre(TABB* a)
   }
 }
 
-void TABB_imp_pos(TABB* a)
+void TABB_imp_pos(TABB *a)
 {
   if (a)
   {
@@ -46,7 +46,7 @@ void TABB_imp_sim(TABB *a)
   }
 }
 
-void imp_aux(TABB* a, int andar)
+void imp_aux(TABB *a, int andar)
 {
   int j;
 
@@ -68,11 +68,11 @@ void imp_aux(TABB* a, int andar)
   }
 }
 
-void TABB_imp_ident(TABB* a) {
+void TABB_imp_ident(TABB *a) {
   imp_aux(a, 0);
 }
 
-void TABB_libera(TABB* a){
+void TABB_libera(TABB *a){
   if (a) {
     TABB_libera(a->esq);
     TABB_libera(a->dir);
@@ -80,7 +80,7 @@ void TABB_libera(TABB* a){
   }
 }
 
-TABB* TABB_busca(TABB* a, int elem){
+TABB* TABB_busca(TABB *a, int elem){
   if ((!a) || (a->info == elem))
     return a;
 
@@ -90,9 +90,10 @@ TABB* TABB_busca(TABB* a, int elem){
   return TABB_busca(a->dir, elem);
 }
 
-TABB* TABB_insere(TABB* a, int elem) {
+TABB* TABB_insere(TABB *a, int elem) {
   if (!a)
     return TABB_cria(elem, NULL, NULL);
+
   if (a->info > elem)
     a->esq = TABB_insere(a->esq, elem);
   else if (a->info < elem)
@@ -101,7 +102,7 @@ TABB* TABB_insere(TABB* a, int elem) {
   return a;
 }
 
-TABB* TABB_retira(TABB* a, int info){
+TABB* TABB_retira(TABB *a, int info){
   if (!a)
     return a;
 

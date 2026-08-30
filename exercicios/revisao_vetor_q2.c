@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-static void print_term(double coefficient, int exponent, int* first_term)
+static void print_term(double coefficient, int exponent, int *first_term)
 {
     if (coefficient == 0)
         return;
@@ -23,7 +23,7 @@ static void print_term(double coefficient, int exponent, int* first_term)
     *first_term = 0;
 }
 
-void derivative(const int* polynomial, int degree)
+void derivative(const int *polynomial, int degree)
 {
     int first_term = 1;
 

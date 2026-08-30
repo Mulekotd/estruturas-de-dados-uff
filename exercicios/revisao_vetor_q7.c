@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int secondMostSuspectIndex(const int* suspects, int size)
+int secondMostSuspectIndex(const int *suspects, int size)
 {
     int mostSuspect = 0;
     int secondMostSuspect = 1;

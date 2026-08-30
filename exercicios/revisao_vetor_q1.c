@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void sieve(int* array, int max)
+void sieve(int *array, int max)
 {
     if (max == 0)
         return;
