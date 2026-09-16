@@ -1,4 +1,4 @@
-// 6) Retorne o número de caminhos que somam N em uma árvore binária simples.
+// Retorne o número de caminhos que somam N em uma árvore binária simples.
 
 #include "TAB/TAB.h"
 

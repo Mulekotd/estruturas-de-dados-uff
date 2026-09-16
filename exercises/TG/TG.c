@@ -125,10 +125,8 @@ void TG_retira_um_sentido(TG *g, int no1, int no2) {
     atual = atual->prox_viz;
   }
 
-  if (!ant)
-    p->prim_viz = atual->prox_viz;
-  else
-    ant->prox_viz = atual->prox_viz;
+  if (!ant) p->prim_viz = atual->prox_viz;
+  else ant->prox_viz = atual->prox_viz;
 
   free(atual);
 }
@@ -155,10 +153,8 @@ TG* TG_retira_no(TG *g, int no) {
 
   while (p->prim_viz) TG_retira_aresta(g, no, p->prim_viz->id_viz);
 
-  if (!ant)
-    g = g->prox_no;
-  else
-    ant->prox_no = p->prox_no;
+  if (!ant) g = g->prox_no;
+  else ant->prox_no = p->prox_no;
 
   free(p);
 

@@ -3,7 +3,7 @@
 
 typedef struct avl {
   int info, alt;
-  struct avl* esq, dir;
+  struct avl *esq, *dir;
 } TAVL;
 
 void TAVL_libera(TAVL *t);

@@ -7,12 +7,9 @@ TLSE* rto(TLSE *l, int elem) {
         if ((*atual)->info == elem) {
             TLSE* removido = *atual;
             *atual = removido->prox;
-
             free(removido);
         } else
-        {
             atual = &(*atual)->prox;
-        }
     }
 
     return l;

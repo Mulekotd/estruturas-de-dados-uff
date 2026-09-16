@@ -14,6 +14,11 @@ TABB* TABB_cria(int raiz, TABB *esq, TABB *dir) {
   return novo;
 }
 
+static int TABB_conta_nos(TABB *a) {
+  if (!a) return 0;
+  return 1 + TABB_conta_nos(a->esq) + TABB_conta_nos(a->dir);
+}
+
 void TABB_imp_pre(TABB *a) {
   if (a) {
     printf("%d ", a->info);

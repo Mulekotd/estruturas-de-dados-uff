@@ -1,4 +1,4 @@
-// 5) Retorne o nó de maior nível que é ancestral tanto de N quanto de M.
+// Retorne o nó de maior nível que é ancestral tanto de N quanto de M.
 
 #include "TAB/TAB.h"
 

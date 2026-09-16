@@ -1,5 +1,5 @@
-// 4) Faça uma função que encontre todos os elementos menores que N em uma ABB
-// e os retorne em um vetor ordenado; não utilize nenhum algoritmo de ordenação. 
+/* Faça uma função que encontre todos os elementos menores que N em uma ABB
+e os retorne em um vetor ordenado; não utilize nenhum algoritmo de ordenação. */
 
 #include "TABB/TABB.h"
 
@@ -14,16 +14,16 @@ int conta_menores(TABB *a, int N) {
 }
 
 // Preenche o vetor em ordem crescente usando índice compartilhado
-void menores_rec(TABB *a, int N, int *vetor, int *index) {
+void menores_rec(TABB *a, int N, int *vetor, int *i) {
     if (!a) return;
 
     if (a->info < N) {
-        menores_rec(a->esq, N, vetor, index);
-        vetor[*index] = a->info;
-        (*index)++;
-        menores_rec(a->dir, N, vetor, index);
+        menores_rec(a->esq, N, vetor, i);
+        vetor[*i] = a->info;
+        (*i)++;
+        menores_rec(a->dir, N, vetor, i);
     } else {
-        menores_rec(a->esq, N, vetor, index);
+        menores_rec(a->esq, N, vetor, i);
     }
 }
 
@@ -34,9 +34,9 @@ int *menoresN(TABB *a, int N, int *tam_vet) {
         return NULL;
 
     int *vetor = (int *) malloc((*tam_vet) * sizeof(int));
-    int index = 0;
+    int i = 0;
 
-    menores_rec(a, N, vetor, &index);
+    menores_rec(a, N, vetor, &i);
 
     return vetor;
 }

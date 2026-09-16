@@ -8,6 +8,7 @@ typedef struct arvbin {
 
 TAB* TAB_inicializa(void);
 TAB* TAB_cria(int raiz, TAB *esq, TAB *dir);
+static int TAB_conta_nos(TAB *a);
 void TAB_imp_pre(TAB *a);
 void TAB_imp_pos(TAB *a);
 void TAB_imp_sim(TAB *a);

@@ -14,6 +14,12 @@ TAB* TAB_cria(int raiz, TAB *esq, TAB *dir) {
   return novo;
 }
 
+static int TAB_conta_nos(TAB *a) {
+  if (!a) return 0;
+  return 1 + TAB_conta_nos(a->esq) + TAB_conta_nos(a->dir);
+}
+
+
 TAB* TAB_busca(TAB *a, int elem) {
   if (!a || (a->info == elem))
     return a;
@@ -82,7 +88,7 @@ void TAB_libera(TAB *a) {
 }
 
 int maior(int x, int y) {
-  if(x >= y)
+  if (x >= y)
     return x;
 
   return y;

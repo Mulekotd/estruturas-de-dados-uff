@@ -8,6 +8,7 @@ typedef struct arvbinbusca {
 
 TABB* TABB_inicializa(void);
 TABB* TABB_cria(int raiz, TABB *esq, TABB *dir);
+static int TABB_conta_nos(TABB *a);
 void TABB_imp_pre(TABB *a);
 void TABB_imp_pos(TABB *a);
 void TABB_imp_sim(TABB *a);

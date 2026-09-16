@@ -1,5 +1,4 @@
-// 2) Faça uma função que calcula a média simples dos elementos
-// de cada nível de uma árvore binária simples.
+// Faça uma função que calcula a média simples dos elementos de cada nível de uma árvore binária simples.
 
 #include "TAB/TAB.h"
 

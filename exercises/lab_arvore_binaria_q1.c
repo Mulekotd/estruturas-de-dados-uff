@@ -1,4 +1,4 @@
-// 1) Faça uma função que some todos os elementos de nível ímpar de uma árvore binária simples
+// Faça uma função que some todos os elementos de nível ímpar de uma árvore binária simples
 // e subtraia todos os de nível par.
 
 #include "TAB/TAB.h"
