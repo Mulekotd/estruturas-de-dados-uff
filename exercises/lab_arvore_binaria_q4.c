@@ -5,7 +5,8 @@ e os retorne em um vetor ordenado; não utilize nenhum algoritmo de ordenação.
 
 // Conta quantos elementos são menores que N
 int conta_menores(TABB *a, int N) {
-    if (!a) return 0;
+    if (a == NULL)
+        return 0;
 
     if (a->info < N)
         return conta_menores(a->esq, N) + 1 + conta_menores(a->dir, N);
@@ -15,7 +16,8 @@ int conta_menores(TABB *a, int N) {
 
 // Preenche o vetor em ordem crescente usando índice compartilhado
 void menores_rec(TABB *a, int N, int *vetor, int *i) {
-    if (!a) return;
+    if (a == NULL)
+        return;
 
     if (a->info < N) {
         menores_rec(a->esq, N, vetor, i);

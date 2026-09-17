@@ -5,7 +5,8 @@ e retorne num vetor ordenado; não utilize nenhum algoritmo de ordenação. */
 
 // Conta quantos elementos são maiores que N
 int conta_maiores(TABB *a, int N) {
-    if (!a) return 0;
+    if (a == NULL)
+        return 0;
 
     if (a->info > N)
         return conta_maiores(a->esq, N) + 1 + conta_maiores(a->dir, N);
@@ -14,7 +15,8 @@ int conta_maiores(TABB *a, int N) {
 }
 
 void maiores_rec(TABB *a, int N, int *vetor, int *i) {
-    if (!a) return;
+    if (a == NULL)
+        return;
 
     if (a->info > N) {
         maiores_rec(a->esq, N, vetor, i);

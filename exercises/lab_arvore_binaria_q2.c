@@ -2,18 +2,10 @@
 
 #include "TAB/TAB.h"
 
-static int altura(TAB *a) {
-    if (!a) return 0;
-
-    int e = altura(a->esq);
-    int d = altura(a->dir);
-
-    return 1 + (e > d ? e : d);
-}
-
 // soma e conta os nós que estão exatamente em 'nivel' (raiz = nível 0)
 static void soma_nivel(TAB *a, int nivel, int *soma, int *qtd) {
-    if (!a) return;
+    if (a == NULL)
+        return;
 
     if (nivel == 0) {
         *soma += a->info;
@@ -25,17 +17,16 @@ static void soma_nivel(TAB *a, int nivel, int *soma, int *qtd) {
 }
 
 float *media(TAB *a, int *tam_vet) {
-    if (!a) {
+    if (a == NULL) {
         *tam_vet = 0;
         return NULL;
     }
 
-    int h = altura(a);
-    *tam_vet = h;
+    *tam_vet = TAB_altura(a);
 
-    float *vet = (float *) malloc(h * sizeof(float));
+    float *vet = (float *) malloc((*tam_vet) * sizeof(float));
 
-    for (int nivel = 0; nivel < h; nivel++) {
+    for (int nivel = 0; nivel < (*tam_vet); nivel++) {
         int soma = 0, qtd = 0;
         soma_nivel(a, nivel, &soma, &qtd);
         vet[nivel] = (float) soma / qtd;

@@ -3,7 +3,8 @@
 #include "TAB/TAB.h"
 
 TAB* maior_nivel(TAB *a, int N, int M) {
-    if (!a) return NULL;
+    if (a == NULL)
+        return NULL;
 
     // Se N e M são menores que o valor do nó atual,
     // o ancestral comum está na subárvore esquerda

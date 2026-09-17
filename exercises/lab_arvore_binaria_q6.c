@@ -2,8 +2,9 @@
 
 #include "TAB/TAB.h"
 
-void conta_caminhos(TAB *a, int N, int soma_atual, int *caminhos) {
-    if (!a) return;
+void conta_caminhos_aux(TAB *a, int N, int soma_atual, int *caminhos) {
+    if (a == NULL)
+        return;
 
     soma_atual += a->info;
 
@@ -15,15 +16,14 @@ void conta_caminhos(TAB *a, int N, int soma_atual, int *caminhos) {
         return;
     }
 
-    conta_caminhos(a->esq, N, soma_atual, caminhos);
-    conta_caminhos(a->dir, N, soma_atual, caminhos);
+    conta_caminhos_aux(a->esq, N, soma_atual, caminhos);
+    conta_caminhos_aux(a->dir, N, soma_atual, caminhos);
 }
 
-int quant_caminhos(TAB *a, int N) {
-    if (!a) return 0;
-
+int conta_caminhos(TAB *a, int N) {
     int caminhos = 0;
-    conta_caminhos(a, N, 0, &caminhos);
+
+    conta_caminhos_aux(a, N, 0, &caminhos);
 
     return caminhos;
 }

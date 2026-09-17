@@ -4,7 +4,8 @@
 #include "TAB/TAB.h"
 
 static int misc1_aux(TAB *a, int nivel) {
-    if (!a) return 0;
+    if (a == NULL)
+        return 0;
 
     int valor;
 
