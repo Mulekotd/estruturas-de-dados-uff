@@ -19,7 +19,6 @@ static int TAB_conta_nos(TAB *a) {
   return 1 + TAB_conta_nos(a->esq) + TAB_conta_nos(a->dir);
 }
 
-
 TAB* TAB_busca(TAB *a, int elem) {
   if (!a || (a->info == elem))
     return a;
