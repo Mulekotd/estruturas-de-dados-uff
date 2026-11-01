@@ -43,23 +43,23 @@ int contaCC(TG *g) {
     return contagem;
 }
 
-int main(void){
+int main(void) {
   TG *g = TG_inicializa();
   int n;
 
-  do{
+  do {
     scanf("%d", &n);
-    if(n <= 0) break;
+    if (n <= 0) break;
     g = TG_ins_no(g, n);
-  } while(1);
+  } while (1);
   
   int m;
 
-  do{
+  do {
     scanf("%d%d", &n, &m);
-    if((n <= 0) || (m <= 0)) break;
+    if ((n <= 0) || (m <= 0)) break;
     TG_ins_aresta(g, n, m);
-  } while(1);
+  } while (1);
 
   TG_imprime(g);
   printf("Numero de componentes conexos? %d\n", contaCC(g));

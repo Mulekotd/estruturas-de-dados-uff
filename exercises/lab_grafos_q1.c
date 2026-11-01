@@ -1,4 +1,18 @@
-#include "TGrafo/TGrafo.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct viz {
+	int id_viz;
+	char *nome;
+	struct viz *prox_viz;
+} TVIZ;
+
+typedef struct grafo {
+	int id_no;
+	char *nome;
+	TVIZ *prim_viz;
+	struct grafo *prox_no;
+} TGrafo;
 
 static TGrafo *busca_nome(TGrafo *g, const char *nome) {
     while (g && strcmp(g->nome, nome) != 0)
